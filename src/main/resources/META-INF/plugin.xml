@@ -1,0 +1,47 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.lawlielt.gvm</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>GVM Go SDK Extension</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="lawlielt.liu@gmail.com" url="https://lawlielt.com">Lawlielt</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    GVM Go SDK Extension helps you manage multiple Go SDK versions in JetBrains IDEs using GVM (Go Version Manager).<br>
+    <br>
+    Features:<br>
+    <ul>
+        <li>Seamlessly integrate GVM with JetBrains IDE Go SDK management</li>
+        <li>Easy switching between different Go versions</li>
+        <li>Automatic detection of GVM-installed Go versions</li>
+        <li>Support for installing and removing Go versions through GVM</li>
+    </ul>
+    <br>
+    This plugin requires GVM to be installed on your system. For GVM installation instructions, please visit 
+    <a href="https://github.com/moovweb/gvm">GVM GitHub page</a>.
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.go</depends>
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+
+<!--    </extensions>-->
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable 
+            instance="com.lawlielt.gvm.GoGvmSdkExtension"
+            id="com.lawlielt.gvm.settings"
+            displayName="GVM Go SDK Extension"/>
+        <notificationGroup id="GVM.GoSDK" displayType="BALLOON" />
+    </extensions>
+</idea-plugin>
