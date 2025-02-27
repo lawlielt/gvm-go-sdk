@@ -1,6 +1,7 @@
 # gvm-go-sdk
+
 GVM Go SDK Extension helps you manage multiple Go SDK versions in JetBrains IDEs using GVM (Go Version Manager).
-------  
+  
 Features:
 * Seamlessly integrate GVM with JetBrains IDE Go SDK management</li>
 * Easy switching between different Go versions</li>
